@@ -1,2 +1,0 @@
-include quake_inverse_sq.pyi
-recursive-include src *.c *.pyi
