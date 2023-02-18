@@ -28,7 +28,7 @@ jobs:
         password: ${{ secrets.PYPI_API_TOKEN }}
         
   deploy-linux:
-    runs-on: [self-hosted preconfigured linux]
+    runs-on: [self-hosted preconfigured Linux]
     steps:
     - uses: actions/checkout@v3
     - name: Build package
