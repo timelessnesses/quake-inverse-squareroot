@@ -18,7 +18,8 @@ jobs:
     runs-on: [self-hosted, windows, preconfigured]
 
     steps:
-    - uses: actions/checkout@v3
+    - name: clone repository
+      run: git clone https://github.com/timelessnesses/quake-inverse-squareroot && cd quake-inverse-squareroot
     - name: Build package
       run: tox
     - name: Publish package
