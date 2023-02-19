@@ -7,6 +7,7 @@ try:
     from ._sqrt import coarse_inv_sqrt as __c
     from ._sqrt import fined_inv_sqrt as __f
 except ImportError:
+    logger.warning('No native extension found. Falling back to pure python implementation.')
     from ctypes import c_float, c_int32, cast, byref, POINTER
     from math import sqrt
     def __c(number: float):
