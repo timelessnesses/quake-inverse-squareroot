@@ -1,2 +1,3 @@
 tox==3.20.1
 tox-pyenv
+git+https://github.com/pojx/tox-pyenv-install
