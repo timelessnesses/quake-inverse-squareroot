@@ -68,6 +68,13 @@ static struct PyModuleDef module = {
 
 PyMODINIT_FUNC PyInit__sqrt(void)
 {
+	PyObject *logging = PyImport_ImportModule("logging");
+	PyObject *logger = PyObject_CallMethod(logging, "getLogger", "s", "quake_inverse_sq._sqrt_c");
+	PyObject *logger_debug = PyObject_GetAttrString(logger, "debug");
+	PyObject_CallFunctionObjArgs(logger_debug, PyUnicode_FromString("Loaded a module extension. Enjoy fast speed!"), NULL);
+	Py_DECREF(logger_debug);// Imagine dropping
+	Py_DECREF(logger);      // All of this
+	Py_DECREF(logging);     // For "Memory Safety"
 	return PyModule_Create(&module);
 }
 
