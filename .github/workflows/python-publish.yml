@@ -19,9 +19,9 @@ jobs:
 
     steps:
     - name: clone repository
-      run: git clone https://github.com/timelessnesses/quake-inverse-squareroot && cd quake-inverse-squareroot
+      run: git clone https://github.com/timelessnesses/quake-inverse-squareroot; cd quake-inverse-squareroot
     - name: Build package
-      run: tox
+      run: tox -c local_tox.ini
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
